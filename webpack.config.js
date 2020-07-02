@@ -20,7 +20,23 @@ const config = {
         new LicenseWebpackPlugin({
             addBanner: true
         }),
-    ]
+    ],
+
+    mode: process.env.mode || 'development',
+
+    module: {
+        rules: [{
+            test: /\.js/,
+            exclude: /node_modules/,
+            use: ['babel-loader']
+        }]
+    },
+
+    resolve: {
+        alias: {
+            '~': path.resolve(__dirname, 'src')
+        }
+    }
 }
 
 module.exports = config
