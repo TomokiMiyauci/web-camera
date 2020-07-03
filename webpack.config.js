@@ -25,11 +25,27 @@ const config = {
     mode: process.env.mode || 'development',
 
     module: {
-        rules: [{
-            test: /\.js/,
-            exclude: /node_modules/,
-            use: ['babel-loader']
-        }]
+        rules: [
+            {
+                test: /\.js/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
+            {
+                test: /\.css/,
+                use: [
+                    'style-loader', 
+                    {   
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                        }
+                    },
+                    'postcss-loader'
+                ]
+            }
+        ]
     },
 
     resolve: {
