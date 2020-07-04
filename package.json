@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --hot --open --mode development",
+    "build": "webpack --mode production",
+    "devtools": "react-devtools"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -21,6 +26,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",
+    "react-devtools": "^4.7.0",
     "react-hot-loader": "^4.12.21",
     "style-loader": "^1.2.1",
     "stylelint": "^13.6.1",
@@ -33,20 +39,18 @@
   },
   "dependencies": {
     "react": "^16.13.1",
+    "react-devtools-core": "^4.7.0",
     "react-dom": "^16.13.1"
   },
-
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
-
   "lint-staged": {
     "*.js": [
       "prettier --write"
     ],
-
     "*.css": [
       "stylelint --fix"
     ]
