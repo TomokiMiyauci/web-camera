@@ -1,9 +1,9 @@
 {
-    "plugins": {
-        "postcss-preset-env": {
-            "features": {
-                "nesting-rules": true
-            }
-        }
+  "plugins": {
+    "postcss-preset-env": {
+      "features": {
+        "nesting-rules": true
+      }
     }
+  }
 }
